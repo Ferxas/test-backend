@@ -15,7 +15,8 @@ const app = express();
 
 // app.use(cors(corsOptions));
 app.use(cors({
-    origin: '*',
+    origin: 'https://new-front-ecru.vercel.app',
+    credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
