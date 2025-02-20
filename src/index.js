@@ -14,10 +14,17 @@ const app = express();
 // };
 
 // app.use(cors(corsOptions));
-app.use(cors());
+app.use(cors({
+    origin: '*',
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }))
 // app.options('*', cors(corsOptions)); // Maneja preflight requests
 app.use(express.json());
+app.get('/api/rest', () => {
+    res.json({message: "CORS working!!!"});
+})
 
 connectDB();
 
