@@ -21,7 +21,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }))
-app.options('*', cors(corsOptions)); // Maneja preflight requests
+// app.options('*', cors(corsOptions)); // Maneja preflight requests
 app.use(express.json());
 app.get('/api/rest', (req, res) => {
     res.json({message: "CORS working!!!"});
